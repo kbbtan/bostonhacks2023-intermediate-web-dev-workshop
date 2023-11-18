@@ -4,7 +4,7 @@ function Card({ title, description, price }) {
         <div class="card-body">
           <h5 class="card-title">{title}</h5>
           <p class="card-text">{description}</p>
-          <p class="card-text"><small class="text-body-secondary">${price}</small></p>
+          <small class="text-body-secondary">${price}</small>
         </div>
     </div>
   )

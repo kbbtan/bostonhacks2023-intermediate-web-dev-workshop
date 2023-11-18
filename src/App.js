@@ -1,28 +1,38 @@
 import './App.css';
 import Card from './Card';
 
+import { useState } from 'react';
+
 function App() {
+  const [groceries, setGroceries] = useState([
+    {
+      title: "Tofu",
+      description: "Good for soup",
+      price: "5"
+    },
+    {
+      title: "Salt and Pepper",
+      description: "A must for any kitchen",
+      price: "5"
+    },
+    {
+      title: "Chicken Thighs",
+      description: "Good source of protein",
+      price: "8"
+    }
+  ]);
+
   return (
     <div className="App">
       <h1>My Grocery List</h1>
 
-      <Card 
-        title="Spring Onions" 
-        description="I probably should buy more of them" 
-        price="2" 
-      />
-
-      <Card 
-        title="Salt and Pepper" 
-        description="A must for any kitchen" 
-        price="5" 
-      />
-
-      <Card 
-        title="Chicken Thighs" 
-        description="Good source of protein" 
-        price="8" 
-      />
+      {groceries.map((grocery) => {
+        return <Card 
+          title={grocery.title} 
+          description={grocery.description} 
+          price={grocery.price} 
+        />
+      })}
     </div>
   );
 }
