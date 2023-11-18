@@ -59,7 +59,7 @@ function App() {
     } 
 
     fetchGroceries();
-  }, [groceries])
+  }, [])
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
